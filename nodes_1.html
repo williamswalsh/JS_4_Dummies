@@ -1,0 +1,42 @@
+<html>
+
+<head>
+	<title>Nodes - Displaying Child Nodes</title>
+	<script>
+		function embolden(){
+			document.body.childNodes[1].childNodes[1].style.fontWeight="bold";
+		}
+	</script>
+</head>
+
+<body>
+
+
+	<section>
+		<p>
+			First
+		</p>
+		<p>
+			Second
+		</p>
+		<p>
+			Third
+		</p>
+	</section>
+
+
+	<script>
+			embolden();
+	</script>
+
+
+	<script>
+		var nodeList = document.body.childNodes[1].childNodes;
+
+		for(i=0;i<nodeList.length;i++){
+			document.write(nodeList[i] + "<br>");
+		}
+	</script>
+
+</body>
+</html>
