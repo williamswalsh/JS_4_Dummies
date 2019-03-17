@@ -1,0 +1,52 @@
+<html>
+
+<head>
+	<script>
+		function loadNewPage(url) {
+			window.location = url;
+		}
+	</script>
+</head>
+
+<body>
+	<script>
+
+		console.log("\nGeneral: ");
+
+		console.log("Gets/Sets window name: " + window.name);
+		console.log("History for current window: " + window.history);
+		console.log("Has window been closed: " + window.closed);
+
+
+		console.log("\nRefs: ");
+
+		console.log("Sub frames: " + window.frames);
+		console.log("Topmost browser window: " + window.top);
+		console.log("Current Window Reference: " + window.self);
+		console.log("Screen Ref: " + window.screen);
+		console.log("Parent Ref: " + window.parent);
+		console.log("Opening Window ref: " + window.opener);
+		console.log("Navigator Ref(Netscape Navigator): " + window.navigator);
+
+
+		console.log("\nCo-ordinates: ");
+
+		console.log("Vertical co-ordinate relative to the screen: " + window.screenY);
+		console.log("Horizontal co-ordinate relative to the screen: " + window.screenX);
+		console.log("Inner height in pixels of window: " + window.innerHeight);
+		console.log("Inner width in pixels of window: " + window.innerWidth);
+		console.log("Co-or: " + window.pageYOffset);
+		console.log("Co-or: " + window.pageXOffset);
+		console.log("Co-or: " + window.outerHeight);
+		console.log("Co-or: " + window.location);
+		console.log("Co-or: " + window.length);
+		console.log("Co-or: " + window.screenTop);
+		console.log("Co-or: " + window.screenLeft);
+
+
+		var newURL = prompt("Please enter a webpage address:");
+		loadNewPage(newURL);
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<html>
+
+<head>
+	<title>Back Button</title>
+	<script>
+    function takeMeBack(){
+      window.location(window.history.go(-1));
+    }
+    function getHistoryLength(){
+      var histLen = window.history.length;
+      return histLen;
+    }
+	</script>
+</head>
+
+<body>
+	<script>
+		var historyLength = getHistoryLength();
+
+    document.write("You have visited this many pages in this window: "+ historyLength);
+
+    <a href="javascript:void(0);" onclick="takeMeBack();">Go Back</a>
+	</script>
+</body>
+
+</html>
