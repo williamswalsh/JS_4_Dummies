@@ -1,0 +1,8 @@
+DOM:
+====
+- Nodes
+-> Document
+-> Element -> <html>, <body>, <title>
+-> Attribute
+-> Text -> Leaf Nodes
+-> Comment
