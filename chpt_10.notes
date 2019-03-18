@@ -6,3 +6,16 @@ DOM:
 -> Attribute
 -> Text -> Leaf Nodes
 -> Comment
+
+
+
+Attribute Object members:
+- isId
+- name
+- value
+- specified **
+
+
+
+To remove an element you must get a ref to its parent and call the removeChild() method
+firstPara.parentNode.removeChild(firstPara);
