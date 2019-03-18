@@ -1,0 +1,25 @@
+<html>
+
+<head>
+	<title>innerHTML</title>
+	<script>
+
+	</script>
+</head>
+
+<body>
+	<div>
+		<p>This is a $3crEt</p>
+	</div>
+
+	<script>
+
+		// undefined
+		var titleStr = document.body.firstChild.innerHTML;
+		document.write(titleStr);
+
+		// undefined
+		document.body.firstChild.innerHTML.setAttribute("class", "myClass");
+	</script>
+</body>
+</html>
