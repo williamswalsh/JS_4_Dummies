@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <title>Events</title>
+  <script>
+        window.onload = init;
+        function init(){
+
+          // note the lack of parenthesis **
+          document.getElementById('funBtn').onclick = funMethod
+        }
+        function funMethod(){
+          document.getElementById('funSpan').innerHTML = "Funny shit";
+          document.getElementById('funBtn').innerHTML = "Funny shit";
+        }
+  </script>
+</head>
+
+<body>
+  <button type="button" id="funBtn">Fun</button>
+  <span id="funSpan"></span>
+  <script>
+
+  </script>
+</body>
+
+</html>
