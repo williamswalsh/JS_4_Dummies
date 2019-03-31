@@ -1,0 +1,64 @@
+- Default return value from a function is the "undefined" value
+- Primitive Data Types:
+string
+number
+Boolean
+undefined
+null
+
+
+// If variable is undefined - give it a default value
+if( typeof yourName === 'undefined'){
+  yourName = "defaultName - John Doe";
+}
+
+// Specifying a default value of a variable
+// (Same as above)
+function fx( varName = varValue){
+}
+
+
+If no var keyword before variableName
+the variable will be a global variable
+
+------
+Anonymous fx's only exist after they are defined and assigned to the variable
+Named fx's exist from the beginning -> can be accessed from anywhere
+Anonymous functions can be reassigned so they are more flexible than named fx's
+Anonymous fx's can be self-executing
+------
+
+self-executing fx()
+( <FUNCTION_DEFINITION> )();
+
+
+Recursion
+- A base case is required to stop the recursive program from continuing.
+
+var objectLiteral ={
+  color: "blue",
+  size: "m",
+  brand: "Nike - Just do it."
+}
+
+object["firstName"] = "Donal";
+
+
+
+
+BOM - Browser Object Model
+
+Loader - Downloads the data from the web - longest loading time
+
+HTML page - first thing loaded
+- points to all links(resources), scripts & styles
+
+CSS should always be loaded in the head element - loaded first so webpage doesn't change style infront of user
+
+navigator object can be used to get client data
+document.write(prop + ": " + navigator[prop] + "<br>")
+
+
+// Feature support test
+document.createElement("audio").play
+- shouldn't use browser properties to detect browser feature capability

@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Events Handling 2</title>
+	<script>
+		window.onload = registerEvents;
+		window.addEventListener('load',registerEvents);
+		function registerEvents(){
+			document.getElementById("incrementBtn").addEventListener('click', increaseCount, false);
+			document.getElementById("decrementBtn").addEventListener('click', decreaseCount, false);
+		}
+
+		var count = 0;
+
+		function increaseCount(){
+			count++;
+			document.getElementById("currentCount").innerHTML= count;
+		}
+
+		function decreaseCount(){
+			count--;
+			document.getElementById("currentCount").innerHTML= count;
+		}
+	</script>
+</head>
+
+<body>
+	<p>Current #: <span id="currentCount">0</span></p>
+	<button id="incrementBtn" type="button" name="incrementBtn">Increase Count</button>
+	<button id="decrementBtn" type="button" name="decrementBtn">Decrease Count</button>
+</body>
+</html>

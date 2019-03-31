@@ -1,0 +1,110 @@
+Working Tree - all files
+DB - .git folder
+
+Staged - changes stored to be commited
+Commit - record to git database
+
+
+
+File staged -> git reset HEAD <FILE> -> File unstaged -> git checkout <FILE> -> Gets original file
+
+Commands:
+---------
+- git add -A -> Add all changes to staging area
+- git reset HEAD <FILE> -> remove file from staging area
+- git remote add origin master <URL>
+- git push --set-upstream origin master -> First push requires you to set upstream
+- git log --author="William"
+- git diff <FILE>
+shows differences between -> working copy and repo
+
+-git diff --staged -> staging area vs repo
+
+- git rm <FILE> -> removes from working copy and staging area
+- must also commit change to delet file from working tree
+
+Rename A file:
+- git mv <OLD_FILENAME> <NEW_FILENAME>
+
+
+- git commit -am "Commit Message"
+Add & commit all changes
+
+- git checkout -- <FILENAME>
+- git reset HEAD <FILENAME>
+
+
+- git checkout <PARTIAL_COMMIT_HASH> -- <FILENAME>
+*** -> Revert a file to its version at that commit
+
+
+
+- git remote add githubRepo <URL>
+- git push -u githubRepo
+
+Upstream -
+
+
+
+- git merge --squash <BRANCH_NAME>
+- git commit -m "Feature & master merged"
+
+REBASE
+- when in feature ->  git rebase master
+- takes any non-existing commits from master br and puts them in feature br
+=====
+- Then in master -> git rebase feature
+	
+
+
+
+
+Git add -> Add the changes to the staging area
+Git commit -> add the changes to the local DB
+Git push -> pushes changes to the remote repo(remote DB)
+
+<<<<<<<< HEAD
+my changes
+======
+changes in remote
+>>>>>>> commit ID?
+
+
+git checkout -b <BRANCH_NAME>
+
+git merge <BRANCH_NAME> -> merges BRANCH_NAME into the branch that you are on
+git branch -D branch_name -> Delete a local branch 
+
+
+** Merge Conflict:
+- pulling when the remote has changes on a line where wyou have made changes to teh same line which you have committed.
+
+
+working copy >> Staging Area >> repository
+
+
+
+
+
+touch .gitignore
+nano .gitignore
+ga
+gc
+gpush
+
+# List all tracked files
+git ls-tree -r master --name-only
+
+# Stop tracking a file & remove file from remote repo.
+git rm -r --cached <fileName>
+gc
+gpush
+
+##  When files are in remote and have been added to .gitignore and now need to be removed from remote.
+
+# Commit Changes locally
+gc
+# Remove all files from remote recursively(–cached will only remove files from the index. Your files will still be there.)
+git rm -r --cached .
+git add -A
+git commit -m ".gitignore fix"

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .columns {
+      -webkit-column-count: 6; // Chrome
+      -moz-column-count: 6; // Firefox
+      column-count: 6;
+    }
+  </style>
+  <title>My 13th JS program</title>
+</head>
+
+<body>
+  <h1>Navigator</h1>
+  <div class="columns">
+    <script>
+      for (var prop in navigator) {
+        document.write(prop + ": " + navigator[prop] + "<br>");
+      }
+
+
+
+      if(document.createElement("audio").play){
+        console.log("Browser Supports HTML5 Audio")
+      }else{
+        console.log("Nope");
+      }
+    </script>
+  </div>
+</body>
+
+</html>

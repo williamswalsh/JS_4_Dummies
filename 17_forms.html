@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Form Element</title>
+	<script>
+
+	</script>
+</head>
+
+<body>
+	<form name="loginForm"
+				autocomplete="true"
+				action="https://www.google.com/test/serverSideScript.php"
+				method="post"
+				novalidate="true"
+				target="_blank"
+				>
+		<!-- With Label elements -->
+		<label for="firstName">First Name: </label>
+		<input type="text" name="firstName"><br>
+		<label for="lastName">Last Name: </label>
+		<input type="text" name="lastName"><br>
+
+		<!-- Without Label elements -->
+		<input type="text" name="firstName" value="First Name:"><br>
+		<input type="text" name="lastName" value="Last Name"><br>
+
+		<input type="submit" name="loginCredsSubmitBtn" value="Subscribe">
+	</form>
+</body>
+</html>
