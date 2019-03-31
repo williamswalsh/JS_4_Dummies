@@ -1,0 +1,8 @@
+<a href="home.html" onclick="alert('go home');">Home</a>
+
+<!-- -->
+
+<!-- # reference refers to this webpage -->
+<a href="#" onclick="alert('go home');">Home</a>
+
+<a href="#" onclick="alert('go home');return false;">Home</a>

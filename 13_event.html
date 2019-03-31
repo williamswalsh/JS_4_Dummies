@@ -1,0 +1,22 @@
+<html>
+
+<head>
+	<title>Events Handling</title>
+	<script>
+		window.onload = initializer;
+		var count = 0;
+		function initializer(){
+			document.getElementById("incrementBtn").onclick = increaseCount;
+		}
+		function increaseCount(){
+			count++;
+			document.getElementById("currentCount").innerHTML= count;
+		}
+	</script>
+</head>
+
+<body>
+	<p>Current Number: <span id="currentCount">0</span></p>
+	<button id="incrementBtn" type="button" name="incrementBtn">Increase Count</button>
+</body>
+</html>
