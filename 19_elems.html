@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Basic Elements</title>
+	<script>
+		window.addEventListener('load', afterPageLoadsDo);
+
+		function afterPageLoadsDo(){
+			var textAreaName = document.getElementById("findingsTextArea").name;
+			console.log("Name: " + textAreaName);
+		}
+	</script>
+</head>
+
+<body>
+	<select name="carMakeDropDown">
+    <option value="volkswagon">volkswagon</option>
+    <option value="bmw">BMW</option>
+  </select><br>
+	<textarea id="findingsTextArea" name="myTextArea" rows="8" cols="80" placeholder="Type your findings here:"></textarea><br>
+
+</body>
+</html>
