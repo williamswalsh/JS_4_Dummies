@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>RegExp</title>
+    <script>
+        function regexTester(re, term){
+            document.write("<b>Regex:</b> " + re + "<br><b>Term:</b> " + term + "<br><b>Result:</b> ");
+            if( re.test(term) === true ){
+                document.write("Match");
+            }else{
+                document.write("not a match");
+            }
+            document.write("<br><br>");
+        }
+
+        // Bad email regex - allows special characters such as @ which isn't allowed
+        // \d - digit
+        regexTester(/^.+@.+\..+/, "william.walsh@digitary.net");
+        regexTester(/^.+@.+\..+/, "william.stephen.walsh@gmail.com");
+        regexTester(/^.+@.+\..+/, "william.walsh@digita@ry.net");
+        regexTester(/^.+@.+\..+/, "william.stephen.walsh@gma*il.com");
+
+
+        // Better email regex
+        // Allows _ which isn't allowed
+        // \w - any alphanumeric
+        // \. - full stop character
+        // [] - set of characters
+        // + - one or more
+        regexTester(/^[\w\.]+@[\w\.]+\.[\w\.]+/, "william.stephen.walsh@gmail.com");
+        regexTester(/^[\w\.]+@[\w\.]+\.[\w\.]+/, "william.walsh@digitary.net");
+        regexTester(/^[\w\.]+@[\w\.]+\.[\w\.]+/, "william.walsh@digitar_y.net");
+
+        // Even Better email regex
+        regexTester(/^[a-z0-9\.]+@[a-z0-9\.]+\.[a-z\.]+/i, "william.stephen.walsh@gmail.com");
+        regexTester(/^[a-z0-9\.]+@[a-z0-9\.]+\.[a-z\.]+/i, "william.stephen.walsh@gm_ail.com");
+
+
+
+        // Searching for email in text file
+        regexTester(/\bcat/, "cat");
+        regexTester(/\bcat/, "_cat");
+        regexTester(/\bcat/, "23cat");
+        regexTester(/\bcat/, "cat23");
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

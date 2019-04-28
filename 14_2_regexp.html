@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>RegExp</title>
+    <script>
+        function regexTester(re, term){
+            document.write("<b>Regex:</b> " + re + "<br><b>Term:</b> " + term + "<br><b>Result:</b> ");
+            if( re.test(term) === true ){
+                document.write("Match");
+            }else{
+                document.write("not a match");
+            }
+            document.write("<br><br>");
+        }
+
+        // \d - digit
+        regexTester(/^\d+/g, "5678");
+
+        // \D - finds a nondigit
+        regexTester(/\D/,"66787");
+        regexTester(/\D/,"tyuu");
+
+        // Find one letter in set []
+        regexTester(/[Jj]ava[Ss]cript/,"JavaScript");
+
+        // Case insensitive - i
+        regexTester(/JavaScript/i,"javascript");
+
+        // Zero or more preceding chars *
+        regexTester(/x*/,"");
+
+        // One or more preceding chars +
+        regexTester(/x+/,"");
+
+        // Zero or one preceding chars ?
+        regexTester(/^x?$/,"xx");
+        regexTester(/^x?$/,"x");
+        regexTester(/^x?$/,"");
+
+        // Either letter |
+        regexTester(/^a|b$/,"xa");
+        regexTester(/^a|b$/,"a");
+
+        // Find {n} instances of preceding letter
+        regexTester(/^z{2}$/,"z");
+        regexTester(/^z{2}$/,"zz");
+        regexTester(/^z{2}/,"zzz");
+        regexTester(/^z{2}$/,"zzz");
+
+        // Find one letter in set []
+        regexTester(/^[fg]$/,"f");
+        regexTester(/^[fg]$/,"t");
+
+        // Find one letter not in set [^]
+        regexTester(/^[^fg]$/,"f");
+        regexTester(/^[^fg]$/,"g");
+        regexTester(/^[^fg]$/,"x");
+
+        // \b word break
+        regexTester(/^hello\b/,"hello world");
+
+        // white space character \s
+        regexTester(/^hello\s/,"hello world");
+
+        // Finda a non-white space character \S
+        regexTester(/^\S/,"h");
+        regexTester(/^\S/," ");
+
+
+
+        // finds a alphanumeric character incl. _ - \w
+        regexTester(/\w+/,"34567rtyu");
+
+        // finds a non- alphanumeric character & * ^ $ @#$%^&*() - \W
+        regexTester(/\W+/,"#$%^&*");
+        regexTester(/\W+/,"tyhjkbnm");
+
+        // MODES:
+        // g - global - proceeds after finding the first instance
+        // i - insensitive - case insensitive
+        // m - multiline - treats line separated by newline as an individual line
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>
