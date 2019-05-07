@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Loading JSON Data async</title>
+
+    <script>
+        // Adding event listener to load based on an event - onload
+        window.addEventListener('load', documentLoader, false);
+
+
+        // Load data on button click - point above call to init function not documengtLoader
+        /*function init(e){
+            document.getElementById('myButton').addEventListener('click', documentLoader, false);
+        }*/
+        function reqListener(){
+            var  obj = JSON.parse(this.responseText);
+            document.getElementById('bookTitle').innerHTML = obj.bookTitle;
+            document.getElementById('bookAuthor').innerHTML = obj.bookAuthor;
+            document.getElementById('summary').innerHTML = obj.summary;
+        }
+
+        function documentLoader(){
+            var oReq = new XMLHttpRequest();
+
+            // Assigning function??
+            oReq.onload = reqListener;
+
+            // GET, file, boolean - should the request be async
+            oReq.open("get", "data.json", true);
+
+            // If async param is set to false above - send will block until it returns
+            // If async param is set to true above - send will not block until it returns
+            oReq.send();
+        }
+    </script>
+</head>
+<body>
+    <button id='myButton'>Keep Going, you can fucking do it!</button>
+    <h2>Book Title:</h2>
+    <div id="bookTitle"></div>
+
+    <h2>Book Author:</h2>
+    <div id="bookAuthor"></div>
+
+    <h2>Summary:</h2>
+    <div id="summary"></div>
+</body>
+</html>

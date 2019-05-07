@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Closures</title>
+</head>
+
+<body>
+  <script>
+      function greeting(name){
+
+          var welcome = "Hello " + name;          // Local var
+
+          var methodReference = function (){      // Inline definition - anonymous method/f(x)
+              alert(welcome)
+          }
+          return methodReference;                 // Return reference to code running
+      }
+
+      var myGreeting = greeting("Jiafan");        // Method returns function reference
+      alert(myGreeting.toString());
+
+      myGreeting();                               // Jiafan string is still alive in this method
+
+      (greeting("Boss"))();                     // Can also call method as it is returned - don't need to store in intermediate variable
+
+  </script>
+
+  <a href="javascript:void(0);">Dead End link</a>
+
+</body>
+
+</html>

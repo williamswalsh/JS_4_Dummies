@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Mapping your locati0n</title>
+
+    <style type="text/css">
+        html,
+        body,
+        #map-canvas {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(success, error, options);
+            function success(pos) {
+                var crd = pos.coords;
+                console.log('Your current position is:');
+                console.log(`Latitude : ${crd.latitude}`);
+                console.log(`Longitude: ${crd.longitude}`);
+                console.log(`More or less ${crd.accuracy} meters.`);
+            }
+            function error(err) {
+                console.warn(`ERROR(${err.code}): ${err.message}`);
+            }
+            var options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+        }
+        function init(e) {
+            document.getElementById('myButton').addEventListener('click', getLocation, false);
+        }
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+        window.addEventListener('load', init, false);
+
+
+
+
+
+        function success(pos) {
+            var crd = pos.coords;
+            console.log('Your current position is:');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`More or less ${crd.accuracy} meters.`);
+        }
+
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+    </script>
+</head>
+
+<body>
+    <form name="login" id="loginform"><button id='myButton'>I know that I can do this!!</button></form>
+    <div id="map-canvas"></div>
+</body>
+
+</html>

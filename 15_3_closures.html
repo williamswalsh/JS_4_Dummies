@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>closures</title>
+    <script>
+        function greetVisitor(phrase){
+
+            // Preprend argument string passed into function to static string
+            var welcome = phrase + ". Great to meet you!";
+
+            // Define an anonymous function to alert using the previously defined string
+            // Capture function in a variable
+            var sayWelcome = function(){
+                alert(welcome);
+            }
+
+            // return the variable which contains the function
+            return sayWelcome;
+        }
+
+
+        // Call the method that returns a method
+        var personalGreeting = greetVisitor('Hola Amigo');
+
+        // Call the method which is stored in the personalGreeting variable
+        personalGreeting();
+        console.log(personalGreeting.toString());
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

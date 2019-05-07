@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>function factory</title>
+    <script>
+        // f(x) defn - function returns function
+        // f(x)-factory
+        function createMessageAlert (theMessage){
+            return function() {
+            alert (theMessage);
+            }
+        }
+
+        // Making Specific functions using f(x)-factory
+        var badEmailError = createMessageAlert("Unknown email address!");
+        var wrongPasswordError = createMessageAlert("That's not your password!");
+
+        // Adding event listener to load based on an event - onload
+        window.addEventListener('load', loader, false);
+
+        function loader(){
+
+
+            // Ties form elements to function references (not fx calls)
+            document.login.yourEmail.addEventListener('change',badEmailError);
+            document.login.yourPassword.addEventListener('change',wrongPasswordError);
+        }
+    </script>
+</head>
+
+<body>
+    <form name="login" id="loginform">
+        <p>
+            <label>Enter Your Email Address:
+                <input type="text" name="yourEmail" />
+            </label>
+        </p>
+        <p>
+            <label>Enter Your Password:
+                <input type="text" name="yourPassword" />
+            </label>
+        </p>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

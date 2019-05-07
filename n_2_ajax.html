@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Loading Data async</title>
+
+    <script>
+        // Adding event listener to load based on an event - onload
+        window.addEventListener('load', init, false);
+
+        function init(e){
+            document.getElementById('myButton').addEventListener('click', documentLoader, false);
+        }
+        function reqListener(){
+            console.log(this.responseText);
+            document.getElementById('content').innerHTML = this.responseText;
+        }
+
+        function documentLoader(){
+            var oReq = new XMLHttpRequest();
+
+            // Assigning function??
+            oReq.onload = reqListener;
+
+            // GET, file, boolean - should the request be async
+            oReq.open("get", "loadme.txt", true);
+
+            // If async param is set to false above - send will block until it returns
+            // If async param is set to true above - send will not block until it returns
+            oReq.send();
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <form name="login" id="loginform">
+        <button id='myButton'>Keep Going, you can do it!</button>
+    </form>
+    <div id="content"></div>
+</body>
+</html>

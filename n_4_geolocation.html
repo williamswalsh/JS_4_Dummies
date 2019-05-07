@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Geolocation</title>
+    <script>
+        /*
+        var gps = navigator.geolocation.getCurrentPosition(
+            function(position) {
+                for (key in position.coords) {
+                    document.write(key + ' ' + position.coords[key]);
+                    document.write('<br>');
+                }
+            }
+        );
+        */
+
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
